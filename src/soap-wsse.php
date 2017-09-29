@@ -59,7 +59,7 @@ class WSSESoap {
 		$this->envelope = $doc->documentElement;
 		$this->soapNS = $this->envelope->namespaceURI;
 		$this->soapPFX = $this->envelope->prefix;
-		$this->SOAPXPath = new DOMXPath($doc);
+		$this->SOAPXPath = new \DOMXPath($doc);
 		$this->SOAPXPath->registerNamespace('wssoap', $this->soapNS);
 		$this->SOAPXPath->registerNamespace('wswsse', WSSESoap::WSSENS);
 		$this->locateSecurityHeader($bMustUnderstand, $setActor);
@@ -94,7 +94,7 @@ class WSSESoap {
 		$token->appendChild($username);
 
 		/* Generate nonce - create a 256 bit session key to be used */
-		$objKey = new XMLSecurityKey(XMLSecurityKey::AES256_CBC);
+		$objKey = new Xmlseclibs\XMLSecurityKey(Xmlseclibs\XMLSecurityKey::AES256_CBC);
 		$nonce = $objKey->generateSessionKey();
 		unset($objKey);
 		$createdate = gmdate("Y-m-d\TH:i:s").'Z';

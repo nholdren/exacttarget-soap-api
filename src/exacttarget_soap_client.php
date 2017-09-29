@@ -10,10 +10,10 @@ class ExactTargetSoapClient extends \SoapClient {
     public $password = NULL;
 
     function __doRequest($request, $location, $saction, $version, $one_way = NULL) {
-        $doc = new DOMDocument();
+        $doc = new \DOMDocument();
         $doc->loadXML($request);
 
-        $objWSSE = new WSSESoap($doc);
+        $objWSSE = new Soapwsse\WSSESoap($doc);
 
         $objWSSE->addUserToken($this->username, $this->password, FALSE);
 
