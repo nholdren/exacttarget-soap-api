@@ -1,0 +1,29 @@
+{
+    "name": "nholdren/exacttarget-soap-api",
+    "type": "library",
+    "keywords" : ["exact target", "exacttarget", "email", "api", "soap", "php" ],
+    "description": "ExactTarget SOAP API package for PHP",
+    "license": "MIT",
+    "homepage": "https://github.com/nholdren/exacttarget-soap-api",
+    "authors": [
+        {
+            "name": "Nick Holdren",
+            "email": "nick@nickholdren.com"
+        }
+    ],
+    "require": {
+        "php"         : ">=5.3.3"
+    },
+    "extra": {
+    },
+    "autoload": {
+        "psr-4": {
+            "ExactTarget\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ExactTarget\\": "src/"
+        }
+    }
+}
